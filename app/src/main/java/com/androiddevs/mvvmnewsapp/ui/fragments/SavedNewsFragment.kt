@@ -13,7 +13,6 @@ import com.androiddevs.mvvmnewsapp.ui.NewsActivity
 import com.androiddevs.mvvmnewsapp.ui.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_saved_news.*
-import java.util.*
 
 
 class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
