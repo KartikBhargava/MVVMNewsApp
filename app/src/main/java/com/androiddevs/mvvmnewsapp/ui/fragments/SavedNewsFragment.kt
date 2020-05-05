@@ -37,7 +37,7 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
         val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
-        ){
+        ) {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -47,24 +47,25 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position  = viewHolder.adapterPosition
+                val position = viewHolder.adapterPosition
                 val article = newsAdapter.differ.currentList[position]
                 viewModel.deleteArticle(article)
-                 Snackbar.make(view, "Successfully deleted Article", Snackbar.LENGTH_LONG).apply {
-                     setAction("Undo"){
-                         viewModel.saveArticle(article)
-                     }
-                     show()
-                 }
+                Snackbar.make(view, "Successfully deleted Article", Snackbar.LENGTH_LONG).apply {
+                    setAction("Undo") {
+                        viewModel.saveArticle(article)
+                    }
+                    show()
+                }
             }
         }
         ItemTouchHelper(itemTouchHelperCallback).apply {
             attachToRecyclerView(rvSavedNews)
         }
 
-        viewModel.getSavedNews().observe(viewLifecycleOwner, androidx.lifecycle.Observer {articles ->
-            newsAdapter.differ.submitList(articles)
-        })
+        viewModel.getSavedNews()
+            .observe(viewLifecycleOwner, androidx.lifecycle.Observer { articles ->
+                newsAdapter.differ.submitList(articles)
+            })
     }
 
     private fun setupRecyclerView() {
