@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/breakingNewsFragment"
-        tools:layout="@layout/fragment_breaking_news"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.BreakingNewsFragment"
-        android:label="BreakingNewsFragment">
+        android:label="BreakingNewsFragment"
+        tools:layout="@layout/fragment_breaking_news">
         <action
             android:id="@+id/action_breakingNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment"
@@ -20,9 +20,9 @@
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
-        tools:layout="@layout/fragment_saved_news"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SavedNewsFragment"
-        android:label="SavedNewsFragment">
+        android:label="SavedNewsFragment"
+        tools:layout="@layout/fragment_saved_news">
         <action
             android:id="@+id/action_savedNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment"
@@ -33,9 +33,9 @@
     </fragment>
     <fragment
         android:id="@+id/searchNewsFragment"
-        tools:layout="@layout/fragment_search_news"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SearchNewsFragment"
-        android:label="SearchNewsFragment">
+        android:label="SearchNewsFragment"
+        tools:layout="@layout/fragment_search_news">
         <action
             android:id="@+id/action_searchNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment"
@@ -46,13 +46,13 @@
     </fragment>
     <fragment
         android:id="@+id/articleFragment"
-        tools:layout="@layout/fragment_article"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.ArticleFragment"
         android:label="ArticleFragment"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right" >
+        app:popExitAnim="@anim/slide_out_right"
+        tools:layout="@layout/fragment_article">
         <argument
             android:name="article"
             app:argType="com.androiddevs.mvvmnewsapp.models.Article" />
