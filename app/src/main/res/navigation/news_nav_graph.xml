@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_nav_graph"
     app:startDestination="@id/breakingNewsFragment">
 
     <fragment
         android:id="@+id/breakingNewsFragment"
+        tools:layout="@layout/fragment_breaking_news"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.BreakingNewsFragment"
         android:label="BreakingNewsFragment">
         <action
@@ -18,6 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
+        tools:layout="@layout/fragment_saved_news"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SavedNewsFragment"
         android:label="SavedNewsFragment">
         <action
@@ -30,6 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchNewsFragment"
+        tools:layout="@layout/fragment_search_news"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SearchNewsFragment"
         android:label="SearchNewsFragment">
         <action
@@ -42,6 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/articleFragment"
+        tools:layout="@layout/fragment_article"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.ArticleFragment"
         android:label="ArticleFragment"
         app:enterAnim="@anim/slide_in_right"
